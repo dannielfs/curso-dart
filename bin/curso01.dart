@@ -1,4 +1,5 @@
 import 'package:curso01/curso01.dart' as curso01;
+import 'dart:io';
 
 void main(List<String> arguments) {
   //Trabalhando com listas
@@ -45,6 +46,15 @@ void main(List<String> arguments) {
   print(maior);
   print(maiorLista);
   print(maiorString);
+
+  //imput de dados pelo teclado
+  print('Qual a sua idade?');
+  String? input = stdin.readLineSync();
+  if (input != null) {
+    int? idade = int.parse(input);
+    print('Sua idade $input.');
+    print('Sua idade ano que vem sera ${idade + 1}');
+  }
 }
 
 void printElement(el) {
