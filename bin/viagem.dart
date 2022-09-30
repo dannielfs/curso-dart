@@ -1,12 +1,13 @@
 import 'transporte.dart';
 
 class Viagem {
-
   static String codigoLocal = '123';
   double? preco;
   Transporte locomocao;
   Set<String> registrosVisitados = <String>{};
   Map<String, dynamic> registrarPrecos = {};
+
+  int _totalLocalVisitado = 0;
 
   Viagem(this.preco, {required this.locomocao});
 
@@ -49,9 +50,22 @@ class Viagem {
 
   void visitar(String destino) {
     registrosVisitados.add(destino);
+    _totalLocalVisitado += 1;
   }
 
   void registrarPrecoVisita(String local, dynamic valor) {
     registrarPrecos[local] = valor;
+  }
+
+  int get consultarTotalLocaisVisitados {
+    return _totalLocalVisitado;
+  }
+
+  void set alterarLocaisVisitados(int novaQnt) {
+    if (novaQnt < 10) {
+      _totalLocalVisitado = novaQnt;
+    } else {
+      print('não é possível');
+    }
   }
 }
