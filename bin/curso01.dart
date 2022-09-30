@@ -1,3 +1,5 @@
+import 'package:test/expect.dart';
+
 void main(List<String> arguments) {
   //Viajar jalapao = Viajar(locomocao: Transporte.carro);
   //jalapao.aventura();
@@ -9,6 +11,8 @@ void main(List<String> arguments) {
   registrosVisitados = registrarDestinos('Berlandia', registrosVisitados);
   registrosVisitados = registrarDestinos('São Paulo', registrosVisitados);
   print(registrosVisitados);
+
+
 }
 
 class Viajar {
@@ -76,4 +80,23 @@ enum Transporte {
 registrarDestinos(String destino, Set<String> banco) {
   banco.add(destino);
   return banco;
+}
+
+iterableComoArgumento() {
+  List<int> numeros = [1,2,3];
+  print(numeros); // [1,2,3]
+
+  numeros.addAll([4,5,6]);
+  print(numeros); // [1,2,3,4,5,6]
+}
+
+iterableComoRetorno() {
+  List<int> numeros = [1,2,3,3,2,1];
+  var subLista = numeros.getRange(1,4);
+  print(subLista); // (2,3,3)
+  print(subLista.runtimeType); //SubListIterable<int>
+
+  List<int> listaSubLista = subLista.toList();
+  print(listaSubLista); //[2, 3, 3]
+  print(listaSubLista.runtimeType); //List<int>
 }
