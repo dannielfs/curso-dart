@@ -5,7 +5,7 @@ void main(List<String> arguments) {
   //jalapao.aventura();
   //jalapao.aventura2();
 
-  usandoDynamic();
+  usandoStatic();
 }
 
 class Viajar {
@@ -192,4 +192,27 @@ usandoDynamic() {
   print(numero3.runtimeType);
   numero3 = '100';
   print(numero3.runtimeType);
+}
+
+/// Usando Static
+/// Serve para criar atributos da classe sem que seja necessário a instância do mesmo.
+
+usandoStatic() {
+
+  Viagem viagem = Viagem(0);
+  viagem.preco;
+  print(viagem.getCodigo());
+}
+
+class Viagem {
+
+  static String codigoLocal = '123';
+  double? preco;
+
+  Viagem(this.preco);
+
+  getCodigo() {
+    return codigoLocal;
+  }
+
 }
