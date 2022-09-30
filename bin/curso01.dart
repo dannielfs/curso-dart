@@ -1,7 +1,14 @@
 void main(List<String> arguments) {
-  Viajar jalapao = Viajar(locomocao: Transporte.carro);
-  jalapao.aventura();
-  jalapao.aventura2();
+  //Viajar jalapao = Viajar(locomocao: Transporte.carro);
+  //jalapao.aventura();
+  //jalapao.aventura2();
+
+  Set<String> registrosVisitados = <String>{};
+  registrosVisitados = registrarDestinos('São Paulo', registrosVisitados);
+  registrosVisitados = registrarDestinos('Rio', registrosVisitados);
+  registrosVisitados = registrarDestinos('Berlandia', registrosVisitados);
+  registrosVisitados = registrarDestinos('São Paulo', registrosVisitados);
+  print(registrosVisitados);
 }
 
 class Viajar {
@@ -64,4 +71,9 @@ enum Transporte {
   helicoptero,
   patins,
   skate,
+}
+
+registrarDestinos(String destino, Set<String> banco) {
+  banco.add(destino);
+  return banco;
 }
