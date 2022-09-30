@@ -4,6 +4,8 @@ void main(List<String> arguments) {
   //Viajar jalapao = Viajar(locomocao: Transporte.carro);
   //jalapao.aventura();
   //jalapao.aventura2();
+
+  usandoDynamic();
 }
 
 class Viajar {
@@ -119,7 +121,6 @@ usandoSet() {
 /// “Dicionário”.
 
 usandoMap() {
-
   //<tipo da chave, tipo do valor>
   Map<String, dynamic> registrarPrecos = {};
   registrarPrecos['São Paulo'] = 1200;
@@ -176,4 +177,19 @@ exemplos() {
     'São Paulo': 'Barato',
   };
   print(precoMap);
+}
+
+/// Aula 3 - Usando dynamic
+
+usandoDynamic() {
+  double numero1 = 7.1;
+  var numero2 = 100; //var tipa a variavel automáticamente, mas não pode mudar o conteudo para outro tipo
+
+  print(numero1.runtimeType);
+  print(numero2.runtimeType);
+
+  dynamic numero3 = 100; //aceita mudar o tipo após a inicialização
+  print(numero3.runtimeType);
+  numero3 = '100';
+  print(numero3.runtimeType);
 }
