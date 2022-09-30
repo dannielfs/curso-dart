@@ -30,9 +30,9 @@ void main() {
 
   legume1.cozinhar(); // Funciona
 
-  fruta1.cozinhar(); // Erro!
+  //fruta1.cozinhar(); // Erro!
 
-  legume1.fazerSuco(); // Erro!
+  //legume1.fazerSuco(); // Erro!
 
   fruta1.fazerSuco(); // Funciona!
 }
